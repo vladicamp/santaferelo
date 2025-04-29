@@ -85,6 +85,8 @@ if ( ! function_exists( 'sta_fe_relocation_setup' ) ) :
 			)
 		);
 
+		add_theme_support( 'custom-logo' );
+
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -216,3 +218,4 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 // require get_template_directory() . '/inc/acf-functions.php';
+

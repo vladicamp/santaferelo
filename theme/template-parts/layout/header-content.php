@@ -9,25 +9,25 @@
 
 ?>
 
-<header id="masthead" class="flex justify-between p-5">
+<header id="masthead" class=" max-w-6xl mx-auto flex justify-between items-center p-5">
 
 	<div>
-		<?php
-		if ( is_front_page() ) :
-			?>
-			<h1><?php bloginfo( 'name' ); ?></h1>
+		
+	<?php if(get_theme_mod( 'custom_logo' ) != '') : ?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 			<?php
-		else :
+			 $logo_id = get_theme_mod('custom_logo');
+			 $logo = wp_get_attachment_image_src($logo_id, 'medium');
+	
+		
 			?>
-			<p><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-		endif;
-
-		$sta_fe_relocation_description = get_bloginfo( 'description', 'display' );
-		if ( $sta_fe_relocation_description || is_customize_preview() ) :
-			?>
-			<p><?php echo $sta_fe_relocation_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-		<?php endif; ?>
+			<img src="<?= $logo[0];?>" alt="Santa Relocation" class="h-24">
+		</a>
+	<?php else : ?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="h-16">
+		</a>
+	<?php endif; ?>
 	</div>
 
 	<nav id="site-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'sta-fe-relocation' ); ?>" class="flex justify-between">
@@ -36,7 +36,10 @@
 			array(
 				'theme_location' => 'menu-1',
 				'menu_id'        => 'primary-menu',
-				'items_wrap'     => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>',
+				'menu_class' => 'md:flex hidden ',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s flex items-center justify-end gap-8  p-4" aria-label="submenu">%3$s</ul>',
+				// 'walker'         => new Tailwind_Navwalker(),
+				// 'walker'         => new Tailwind_Navwalker(),
 			)
 		);
 		?>

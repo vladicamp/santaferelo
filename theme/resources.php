@@ -7,7 +7,7 @@ get_header();
 ?>
 
 	<section id="primary">
-		<main id="main">
+		<main id="main" class="grid grid-cols-3 gap-10 max-w-6xl mx-auto p-5">
 		<?php 
         $resources =  new WP_Query( array(
             'post_type' => 'resources',
@@ -20,15 +20,19 @@ get_header();
         if( $resources->have_posts() ) : 
         while ( $resources->have_posts() ) : $resources->the_post();?>
 
-            <?php the_title();?>?>
-            <div class="flex flex-col md:flex-row">
-                <div class="w-full md:w-1/2">
-                    <?php the_post_thumbnail();?>
+            <div class="flex flex-col relative">
+               
+                <?php if(get_field('lite')):?>
+                    <h3 class="absolute text-black top-2 right-2 uppercase bg-amber-50 px-2 py-4">Lite</h3>
+                <?php endif;?>
+                <div class="w-full">
+                    <?php the_post_thumbnail('large', array('class'=> 'mb-8') ); ?>
                 </div>
-                <div class="w-full md:w-1/2">
-                    <?php the_content();?>
+                <div class="w-full">
+                    <?php the_title();?>
                 </div>
             </div>
+          
         <?php endwhile; wp_reset_postdata();?>
 	
 
