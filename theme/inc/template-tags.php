@@ -196,8 +196,8 @@ if ( ! function_exists( 'sta_fe_relocation_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<figure>
-				<?php the_post_thumbnail(); ?>
+			<figure class="singular-img-wrapper">
+				<img src="<?= get_the_post_thumbnail_url(); ?>" alt="" class="w-full">
 			</figure><!-- .post-thumbnail -->
 
 			<?php

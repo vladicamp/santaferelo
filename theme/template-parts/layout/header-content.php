@@ -9,7 +9,7 @@
 
 ?>
 
-<header id="masthead">
+<header id="masthead" class="flex justify-between p-5">
 
 	<div>
 		<?php
@@ -30,9 +30,7 @@
 		<?php endif; ?>
 	</div>
 
-	<nav id="site-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'sta-fe-relocation' ); ?>">
-		<button aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'sta-fe-relocation' ); ?></button>
-
+	<nav id="site-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'sta-fe-relocation' ); ?>" class="flex justify-between">
 		<?php
 		wp_nav_menu(
 			array(

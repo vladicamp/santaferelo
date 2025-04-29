@@ -11,13 +11,13 @@ get_header();
 ?>
 
 	<section id="primary">
-		<main id="main">
+		<main id="main" class="max-w-[1080px] m-auto">
 
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
-				get_template_part( 'template-parts/content/content', 'single' );
+				get_template_part( 'template-parts/content/content', 'single-resources' );
 
 				if ( is_singular( 'post' ) ) {
 					// Previous/next post navigation.

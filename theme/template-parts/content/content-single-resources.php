@@ -1,0 +1,56 @@
+<?php
+/**
+ * Template part for displaying single posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Sta_Fe_Relocation
+ */
+
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<header class="entry-header">
+		<?php the_title( '<h1 class="entry-title text-center">', '</h1>' ); ?>
+
+		<?php if ( ! is_page() ) : ?>
+			<div class="entry-meta">
+				<?php sta_fe_relocation_entry_meta(); ?>
+			</div><!-- .entry-meta -->
+		<?php endif; ?>
+	</header><!-- .entry-header -->
+
+	<?php sta_fe_relocation_post_thumbnail(); ?>
+
+	<div <?php sta_fe_relocation_content_class( 'entry-content mt-8' ); ?>>
+		<?php
+		the_content(
+			sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers. */
+					__( 'Continue reading<span class="sr-only"> "%s"</span>', 'sta-fe-relocation' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				get_the_title()
+			)
+		);
+
+		wp_link_pages(
+			array(
+				'before' => '<div>' . __( 'Pages:', 'sta-fe-relocation' ),
+				'after'  => '</div>',
+			)
+		);
+		?>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<?php sta_fe_relocation_entry_footer(); ?>
+	</footer><!-- .entry-footer -->
+
+</article><!-- #post-${ID} -->
