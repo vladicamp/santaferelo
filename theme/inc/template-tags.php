@@ -261,8 +261,8 @@ if ( ! function_exists( 'sta_fe_relocation_the_posts_navigation' ) ) :
 		the_posts_pagination(
 			array(
 				'mid_size'  => 2,
-				'prev_text' => __( 'Newer posts', 'sta-fe-relocation' ),
-				'next_text' => __( 'Older posts', 'sta-fe-relocation' ),
+				'prev_text' => __( '<<', 'sta-fe-relocation' ),
+				'next_text' => __( '>>', 'sta-fe-relocation' ),
 			)
 		);
 	}

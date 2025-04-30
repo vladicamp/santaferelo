@@ -44,7 +44,7 @@
     },
     "description": "",
     "public": true,
-    "hierarchical": true,
+    "hierarchical": false,
     "exclude_from_search": false,
     "publicly_queryable": true,
     "show_ui": true,
@@ -59,7 +59,7 @@
     "menu_position": "",
     "menu_icon": {
         "type": "dashicons",
-        "value": "dashicons-admin-post"
+        "value": "dashicons-admin-network"
     },
     "rename_capabilities": false,
     "singular_capability_name": "post",
@@ -72,7 +72,7 @@
     "taxonomies": [
         "resource-type"
     ],
-    "has_archive": false,
+    "has_archive": true,
     "has_archive_slug": "",
     "rewrite": {
         "permalink_rewrite": "post_type_key",
@@ -86,5 +86,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1745938192
+    "modified": 1746004620
 }
