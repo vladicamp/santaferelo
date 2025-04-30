@@ -103,22 +103,6 @@ if ( ! function_exists( 'sta_fe_relocation_entry_meta' ) ) :
 		if ( ! is_singular() ) {
 			sta_fe_relocation_comment_count();
 		}
-
-		// Edit post link.
-		edit_post_link(
-			sprintf(
-				wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers. */
-					__( 'Edit <span class="sr-only">%s</span>', 'sta-fe-relocation' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
 	}
 endif;
 

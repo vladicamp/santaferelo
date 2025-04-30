@@ -37,7 +37,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "3 mins",
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
@@ -63,5 +63,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1745937943
+    "modified": 1746018494
 }

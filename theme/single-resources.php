@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<section id="primary">
-		<main id="main" class="max-w-[1080px] m-auto">
+		<main id="main" class="max-w-[772px] m-auto">
 
 			<?php
 			/* Start the Loop */

@@ -27,9 +27,9 @@ get_header();
 						<?php the_post_thumbnail('full', array('class' => 'w-full h-full object-cover')); ?>
 					</div>
 					<div class="card-content mb-6">
-						<h2 class="card-title mb-6 text-lg"><?php the_title(); ?></h2>
+						<h2 class="card-title mb-6 text-lg font-bold"><?php the_title(); ?></h2>
 						
-						<div class="date"><?= get_the_date(); ?></div>
+						<div class="date font-medium"><?= get_the_date(); ?></div>
 						<a href="<?php the_permalink(); ?>" class="btn absolute top-0 left-0 w-full h-full">&nbsp;</a>
 					</div>
 				</div>

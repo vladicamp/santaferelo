@@ -219,3 +219,7 @@ add_filter('use_block_editor_for_post_type', function($use_block_editor, $post_t
     }
     return $use_block_editor; // Keep the default behavior for other post types
 }, 10, 2);
+
+function currentYear(){
+	return date('Y');
+}

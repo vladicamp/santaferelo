@@ -9,14 +9,14 @@
 
 ?>
 
-<footer id="colophon">
+<footer id="colophon" class="bg-black">
 
-	<div>
+	<div class="max-w-6xl mx-auto p-5 text-white text-center">
 		<?php
 		$sta_fe_relocation_blog_info = get_bloginfo( 'name' );
 		if ( ! empty( $sta_fe_relocation_blog_info ) ) :
 			?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> © 2025. Alrights reserved
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> © <?= currentYear() ?>. All rights reserved.
 			<?php
 		endif;
 		?>

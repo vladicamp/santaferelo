@@ -37,7 +37,7 @@
 				'theme_location' => 'menu-1',
 				'menu_id'        => 'primary-menu',
 				'menu_class' => 'md:flex hidden ',
-				'items_wrap'     => '<ul id="%1$s" class="%2$s flex items-center justify-end gap-8  p-4" aria-label="submenu">%3$s</ul>',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s flex items-center justify-end gap-8 p-4 font-black" aria-label="submenu">%3$s</ul>',
 				// 'walker'         => new Tailwind_Navwalker(),
 				// 'walker'         => new Tailwind_Navwalker(),
 			)
