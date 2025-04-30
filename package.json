@@ -47,6 +47,7 @@
 		"bundle": "run-s production zip"
 	},
 	"dependencies": {
+		"aos": "^2.3.4",
 		"gsap": "^3.12.7"
 	}
 }

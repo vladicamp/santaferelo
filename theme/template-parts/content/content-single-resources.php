@@ -13,7 +13,7 @@ $readingTime = get_field('reading_time') ? get_field('reading_time') : get_readi
 // echo '<p class="pb-10"><a href="' . esc_url($term_link) . '">' . esc_html($term[0]->name) . '</a></p>';
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> data-aos="fade-up">
 
 	<div class="pb-20 font-black">
           <a href="<?= site_url('/resources/') ?>" class=""><span>‹</span> Back to news</a>

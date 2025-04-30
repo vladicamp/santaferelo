@@ -147,9 +147,10 @@ add_action( 'widgets_init', 'sta_fe_relocation_widgets_init' );
  * Enqueue scripts and styles.
  */
 function sta_fe_relocation_scripts() {
+	wp_enqueue_script( 'aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), STA_FE_RELOCATION_VERSION, true );
+	wp_enqueue_style( 'aos', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), STA_FE_RELOCATION_VERSION );
 	wp_enqueue_style( 'sta-fe-relocation-style', get_stylesheet_uri(), array(), STA_FE_RELOCATION_VERSION );
 	wp_enqueue_script( 'sta-fe-relocation-script', get_template_directory_uri() . '/js/script.min.js', array(), STA_FE_RELOCATION_VERSION, true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
