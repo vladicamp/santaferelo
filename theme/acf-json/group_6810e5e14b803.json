@@ -19,9 +19,9 @@
             "message": "",
             "default_value": 0,
             "allow_in_bindings": 0,
-            "ui": 0,
             "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_6810e60ba5c4b",
@@ -37,7 +37,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "3 mins",
+            "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
@@ -63,5 +63,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1746018494
+    "modified": 1746029069
 }
