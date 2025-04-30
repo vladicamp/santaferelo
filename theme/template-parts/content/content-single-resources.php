@@ -8,11 +8,9 @@
  */
 
 $taxonomy = get_post_taxonomies();
-$readingTime = get_field('reading_time');
-$term = get_field('resources-type');
+$readingTime = get_field('reading_time') ? get_field('reading_time') : get_reading_time(get_the_content());
 
-var_dump( $term );
-
+// echo '<p class="pb-10"><a href="' . esc_url($term_link) . '">' . esc_html($term[0]->name) . '</a></p>';
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -23,19 +21,21 @@ var_dump( $term );
 
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title mb-2">', '</h1>' ); ?>
-
+		<?php if( $term = get_the_terms(get_the_ID(), 'resource-type')):?>
+			<p class="pb-2 text-sm uppercase">
+				<a class="text-blue-500 hover:text-blue-700" href="<?= get_term_link($term[0], 'resource-type') ?>"><?= $term[0]->name ?></a>
+			</p>
+		<?php endif;?>
+	
 		<?php if( $readingTime ) : ?>
 
-			<p>Reading time <?= $readingTime ?></p>
+			<p class="flex items-center gap-2" title="Reading time"><span class="dashicons dashicons-clock"></span><?= $readingTime ?></p>
 
 		<?php endif; ?>
 
-		<p class="pb-10">
-			<a href=""><?= $taxonomy[0] ?></a>
-		</p>
 
 		<?php if ( ! is_page() ) : ?>
-			<div class="entry-meta">
+			<div class="entry-meta mt-8">
 				<?php sta_fe_relocation_entry_meta(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

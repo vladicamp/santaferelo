@@ -192,6 +192,13 @@
                 "operator": "==",
                 "value": "default"
             }
+        ],
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
         ]
     ],
     "menu_order": 0,
@@ -203,5 +210,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1745937856
+    "modified": 1746010495
 }

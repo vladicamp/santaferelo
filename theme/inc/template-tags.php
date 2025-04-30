@@ -180,7 +180,8 @@ if ( ! function_exists( 'sta_fe_relocation_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<figure class="singular-img-wrapper">
+			<figure class="singular-img-wrapper relative">
+				<div class="image-overlay absolute top-0 left-0 w-full h-full bg-black/20"></div>
 				<img src="<?= get_the_post_thumbnail_url(); ?>" alt="" class="w-full">
 			</figure><!-- .post-thumbnail -->
 
@@ -245,8 +246,8 @@ if ( ! function_exists( 'sta_fe_relocation_the_posts_navigation' ) ) :
 		the_posts_pagination(
 			array(
 				'mid_size'  => 2,
-				'prev_text' => __( '<<', 'sta-fe-relocation' ),
-				'next_text' => __( '>>', 'sta-fe-relocation' ),
+				'prev_text' => __( '&#8678;', 'sta-fe-relocation' ),
+				'next_text' => __( '&#8680;', 'sta-fe-relocation' ),
 			)
 		);
 	}

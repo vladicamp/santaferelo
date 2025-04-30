@@ -223,3 +223,17 @@ add_filter('use_block_editor_for_post_type', function($use_block_editor, $post_t
 function currentYear(){
 	return date('Y');
 }
+
+function get_reading_time($content) {
+    // Calculate the number of words in the content
+    $word_count = str_word_count(strip_tags($content));
+    
+    // Average reading speed (words per minute)
+    $reading_speed = 200; // You can adjust this value
+
+    // Calculate reading time in minutes
+    $reading_time = ceil($word_count / $reading_speed);
+
+    // Return the reading time as a string
+    return $reading_time . ' min read';
+}

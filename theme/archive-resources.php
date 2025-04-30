@@ -17,16 +17,17 @@ get_header();
 			<header class="page-header flex justify-center items-center">
 				<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 			</header><!-- .page-header -->
-			<div class="resources grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+			<div class="resources auto-rows-fr grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
 				<?php
 				// Start the Loop.
 				while ( have_posts() ) :
 				the_post();?>
-				<div class="resource card relative">
-					<div class="card-image mb-4">
+				<div class="resource card shadow-2xl flex flex-col justify-between items-stretch relative">
+					<div class="card-image relative">
+						<div class="image-overlay absolute top-0 left-0 w-full h-full bg-black/20"></div>
 						<?php the_post_thumbnail('full', array('class' => 'w-full h-full object-cover')); ?>
 					</div>
-					<div class="card-content mb-6">
+					<div class="card-content mb-6 p-6 transition-all duration-300">
 						<h2 class="card-title mb-6 text-lg font-bold"><?php the_title(); ?></h2>
 						
 						<div class="date font-medium"><?= get_the_date(); ?></div>
@@ -50,7 +51,7 @@ get_header();
 		endif;
 		?>
 		</div>
-		<div class="pagination flex justify-center items-center">
+		<div class="pagination flex justify-center mt-10 items-center">
 				<?php sta_fe_relocation_the_posts_navigation(); ?>
 			</div>
 		</main><!-- #main -->
