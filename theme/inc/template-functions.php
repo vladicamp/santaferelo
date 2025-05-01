@@ -206,15 +206,26 @@ function sta_fe_relocation_html5_comment( $comment, $args, $depth ) {
 }
 
 // Disable the block editor for Pages and Resources post type
+/*
 add_filter('use_block_editor_for_post_type', function($use_block_editor, $post_type) {
-    if ($post_type === 'page') {
+    if ($post_type === 'page' &&  !is_page_template('template-special.php')  ) {
         return false; // Disable block editor
     }
     return $use_block_editor; // Keep the default behavior for other post types
 }, 10, 2);
+*/
+add_filter('use_block_editor_for_post', function($use_block_editor, $post) {
+    if ($post->post_type === 'page') {
+        $template = get_post_meta($post->ID, '_wp_page_template', true);
+        if ($template !== 'template-special.php') {
+            return false; // Disable block editor
+        }
+    }
+    return $use_block_editor;
+}, 10, 2);
 
 add_filter('use_block_editor_for_post_type', function($use_block_editor, $post_type) {
-    if ($post_type === 'post' || $post_type === 'special' || $post_type === 'resources'   ) {
+    if ($post_type === 'post' || $post_type === 'resources'   ) {
         return true; // Enable block editor for your special post type
     }
     return $use_block_editor; // Keep the default behavior for other post types
