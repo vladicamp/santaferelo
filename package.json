@@ -48,6 +48,7 @@
 	},
 	"dependencies": {
 		"aos": "^2.3.4",
-		"gsap": "^3.12.7"
+		"gsap": "^3.12.7",
+		"vanilla-tilt": "^1.8.1"
 	}
 }

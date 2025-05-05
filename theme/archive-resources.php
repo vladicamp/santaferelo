@@ -22,7 +22,7 @@ get_header();
 				// Start the Loop.
 				while ( have_posts() ) :
 				the_post();?>
-				<div class="resource card shadow-2xl flex flex-col justify-between items-stretch relative">
+				<div class="resource card tilt shadow-2xl flex flex-col justify-between items-stretch relative">
 					<div class="card-image relative">
 						<?php if(get_field('lite')):?>
 							<div class="badge badge-primary absolute uppercase font-bold bg-gray-700 text-white px-2 py-1 rounded-sm top-2 right-2">Lite</div>

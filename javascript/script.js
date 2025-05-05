@@ -8,3 +8,14 @@
  * For esbuild documentation, please see:
  * https://esbuild.github.io/
  */
+import VanillaTilt from "vanilla-tilt";
+import AOS from "aos";
+
+VanillaTilt.init(document.querySelectorAll(".tilt"), {
+    max: 10,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.5,
+});
+
+AOS.init();
